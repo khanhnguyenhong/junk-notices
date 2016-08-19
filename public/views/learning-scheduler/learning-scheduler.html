@@ -1,0 +1,66 @@
+<div class="col-md-12" style="padding-top:20px">
+    <div class="col-md-12">
+        <button class="btn-trans pull-left font-sketch no-border" ng-click="createNote()">
+        Make a note &nbsp;
+    </button>
+        <div class="clearfix"></div>
+    </div>
+
+    <!--Start: Creating group-->
+    <div class="padding-20 pull-left" ng-show="isCreating||isEditing">
+        <div class="panel panel-trans-dotted width-300" ng-init="inputNoteType='text'">
+            <div class="panel-body">
+                <input id="inputName" class="input-trans text-l" placeholder="name" ng-model="inputName">
+                <form class="text-left">
+                    <label>
+            <input type="radio" ng-model="inputNoteType" value="text" /> text
+            </label> &nbsp;
+                    <label>
+            <input type="radio" ng-model="inputNoteType" value="revision" /> revision
+            </label>
+                </form>
+                <div ng-show="inputNoteType=='text'">
+                    <textarea class="input-trans text-m height-200" placeholder="content" ng-model="inputContent"></textarea>
+                </div>
+                <div ng-show="inputNoteType=='revision'">
+                    <input id="inputStudyTime" class="input-trans datepicker" placeholder="study time" ng-model="inputStudyTime">
+                    <div ng-show="inputStudyTime.length">
+                        <div style="position:relative">
+                            <span class="fa fa-plus btn-trans no-border" style="position:absolute; right: 10px; top: 10px" ng-show="inputRevisionTime.length"
+                                ng-click="addRevisionTime()"></span>
+                            <input id="inputRevisionTime" class="input-trans datepicker" ng-model="inputRevisionTime" placeholder="revision time (if any)">
+                            <h4 ng-repeat="day in revisionTimes track by $index">#{{$index+1}}: {{day}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 padding-5">
+                    <button class="btn-trans no-border pull-right" ng-show="inputName.length" ng-click="saveNote()">Stick it!</button>
+                    <button class="btn-trans no-border pull-right" ng-click="isCreating=false">Discard</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End: Creating group-->
+
+    <!--Start: Showing group-->
+    <div class="padding-20 pull-left" ng-repeat="note in notes">
+        <div class="panel panel-trans width-300">
+            <div class="panel-action-container">
+                <button class="btn-trans no-border pull-right" ng-click="removeNote(note._id)">remove</button>
+                <button class="btn-trans no-border pull-right">edit</button>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+                <h2 ng-bind="note.name"></h2>
+                <pre ng-show="note.type=='text'" ng-bind="note.content"></pre>
+                <div ng-show="note.type=='revision'">
+                    <h4 ng-repeat="day in note.days track by $index" ng-bind="getDayText($index, day)">
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <!--End: Showing group-->
+</div>
