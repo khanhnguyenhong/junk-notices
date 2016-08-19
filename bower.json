@@ -1,0 +1,25 @@
+{
+  "name": "junk-notices",
+  "description": "Reminder for some stupid stuffs",
+  "main": "",
+  "authors": [
+    "khanhnguyenhong <khanh.nguyen.k1set@eiu.edu.vn>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/khanhnguyenhong/junk-notices",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "jquery": "^3.1.0",
+    "oclazyload": "^1.0.9",
+    "angular-local-storage": "^0.3.0"
+  }
+}
