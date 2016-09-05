@@ -17,9 +17,12 @@
             </label> &nbsp;
                     <label>
             <input type="radio" ng-model="inputNoteType" value="revision" /> revision
+            </label> &nbsp;
+                    <label>
+            <input type="radio" ng-model="inputNoteType" value="link" /> link
             </label>
                 </form>
-                <div ng-show="inputNoteType=='text'">
+                <div ng-show="inputNoteType=='text'||inputNoteType=='link'">
                     <textarea class="input-trans text-m height-200" placeholder="content" ng-model="inputContent"></textarea>
                 </div>
                 <div ng-show="inputNoteType=='revision'">
@@ -52,7 +55,8 @@
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body">
-                <h2 ng-bind="note.name"></h2>
+                <h2 ng-bind="note.name"></h2> &nbsp;
+                <a ng-show="note.type=='link'" href="{{note.content}}"><span class="fa fa-external-link"></span></a>
                 <pre ng-show="note.type=='text'" ng-bind="note.content"></pre>
                 <div ng-show="note.type=='revision'">
                     <h4 ng-repeat="day in note.days track by $index" ng-bind="getDayText($index, day)">
