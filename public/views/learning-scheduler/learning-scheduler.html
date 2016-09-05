@@ -56,8 +56,8 @@
             </div>
             <div class="panel-body">
                 <h2>
-                    {{note.name}} &nbsp;
-                    <a class="no-deco" ng-show="note.type=='link'" href="{{note.content}}"><span class="fa fa-external-link"></span></a>
+                    {{note.name}}
+                    <a class="no-deco" ng-show="note.type=='link'" href="{{note.content}}" target="_blank">-open link</a>
                 </h2>
                 <pre ng-show="note.type=='text'" ng-bind="note.content"></pre>
                 <div ng-show="note.type=='revision'">
