@@ -55,8 +55,10 @@
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body">
-                <h2 ng-bind="note.name"></h2> &nbsp;
-                <a ng-show="note.type=='link'" href="{{note.content}}"><span class="fa fa-external-link"></span></a>
+                <h2>
+                    {{note.name}} &nbsp;
+                    <a class="no-deco" ng-show="note.type=='link'" href="{{note.content}}"><span class="fa fa-external-link"></span></a>
+                </h2>
                 <pre ng-show="note.type=='text'" ng-bind="note.content"></pre>
                 <div ng-show="note.type=='revision'">
                     <h4 ng-repeat="day in note.days track by $index" ng-bind="getDayText($index, day)">
