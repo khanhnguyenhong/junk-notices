@@ -50,11 +50,11 @@ app.controller('learningSchedulerCtrl', ['$scope', 'notes', function ($scope, no
     }
 
     $scope.removeNote = function (id) {
-        var l=$scope.notes.length;
-        if(notes.deleteNote(id)){
-            for(var i=0; i<l; i++){
-                if($scope.notes[i]._id==id){
-                    $scope.notes.splice(i,1);
+        var l = $scope.notes.length;
+        if (notes.deleteNote(id)) {
+            for (var i = 0; i < l; i++) {
+                if ($scope.notes[i]._id == id) {
+                    $scope.notes.splice(i, 1);
                     return;
                 }
             }
@@ -66,5 +66,8 @@ app.controller('learningSchedulerCtrl', ['$scope', 'notes', function ($scope, no
             orientation: "top",
             format: 'dd/mm/yyyy'
         });
+
+        var container = document.getElementById('learning-scheduler-container');
+        Ps.initialize(container);
     }, 0);
 }])

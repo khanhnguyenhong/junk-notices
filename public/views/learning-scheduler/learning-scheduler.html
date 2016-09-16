@@ -1,4 +1,4 @@
-<div class="col-md-12" style="padding-top:20px">
+<div id='learning-scheduler-container' class="col-md-12" style="padding-top:20px">
     <div class="col-md-12">
         <button class="btn-trans pull-left font-sketch no-border" ng-click="createNote()">
         Make a note &nbsp;
@@ -61,7 +61,7 @@
                 <h2 ng-show="note.type=='link'">
                     <a class="no-deco" href="{{note.content}}" target="_blank">{{note.name}}</a>
                 </h2>
-                <pre ng-show="note.type=='text'" ng-bind="note.content"></pre>
+                <pre class="note-content" ng-show="note.type=='text'" ng-bind="note.content"></pre>
                 <div ng-show="note.type=='revision'">
                     <h4 ng-repeat="day in note.days track by $index" ng-bind="getDayText($index, day)">
                     </h4>
