@@ -72,6 +72,9 @@
 .padding-30 {
   padding: 30px;
 }
+.padding-top-20 {
+  padding-top: 20px;
+}
 /*---End: For padding--------------------------------*/
 /*---Start: For Typos--------------------------------*/
 @font-face {
@@ -112,6 +115,9 @@ pre {
   padding: 0px;
   white-space: normal;
   font-family: DKCoolCrayon;
+}
+.text-bold {
+  font-weight: bold;
 }
 .text-l {
   font-size: 40px;
@@ -279,6 +285,12 @@ pre {
   border-bottom: 6px solid black;
 }
 /*---End: Datepicker------------------------------------*/
+.hover-show .hover-show-elem {
+  display: none;
+}
+.hover-show:hover * {
+  display: block;
+}
 .btn-trans {
   border: 1px dotted white;
   background: transparent;

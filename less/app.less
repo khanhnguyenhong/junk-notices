@@ -94,6 +94,10 @@ width: 100%;
 .padding-30{
     padding: 30px;
 }
+
+.padding-top-20{
+    padding-top: 20px; 
+}
 /*---End: For padding--------------------------------*/
 
 /*---Start: For Typos--------------------------------*/
@@ -138,6 +142,10 @@ pre{
     padding: 0px;
     white-space: normal;
     .font-crayon;
+}
+
+.text-bold{
+    font-weight: bold;
 }
 
 .text-l{
@@ -279,6 +287,14 @@ pre{
 }
 /*---End: Datepicker------------------------------------*/
 
+.hover-show{
+    & .hover-show-elem{
+        display: none;
+    }
+    &:hover *{
+        display: block;
+    }
+}
 
 .btn-trans{
     border: 1px dotted white;

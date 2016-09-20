@@ -8,7 +8,7 @@
                     <h4>username:&nbsp;</h4>
                 </td>
                 <td>
-                    <input class="input-trans" />
+                    <input type="text" class="input-trans" ng-model="username" ng-keypress="handleEnter($event)"/>
                 </td>
             </tr>
             <tr>
@@ -16,12 +16,12 @@
                     <h4>password:&nbsp;</h4>
                 </td>
                 <td>
-                    <input class="input-trans" />
+                    <input type="password" class="input-trans" ng-model="password" ng-keypress="handleEnter($event)"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <button class="btn-trans" ui-sref="view.dashboard">
+                    <button class="btn-trans" ng-click="login()">
                         <h4>
                         login
                         </h4>

@@ -1,7 +1,6 @@
 app.controller('learningSchedulerCtrl', ['$scope', 'notes', function ($scope, notes) {
     notes.getAllNotes();
     $scope.notes = notes.notes;
-    console.log($scope.notes);
     $scope.revisionTimes = [];
 
     $scope.getDayText = function (i, day) {

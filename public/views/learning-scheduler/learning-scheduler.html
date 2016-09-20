@@ -1,4 +1,4 @@
-<div id='learning-scheduler-container' class="col-md-12" style="padding-top:20px">
+<div id='learning-scheduler-container' class="padding-top-20">
     <div class="col-md-12">
         <button class="btn-trans pull-left font-sketch no-border" ng-click="createNote()">
         Make a note &nbsp;
@@ -47,8 +47,8 @@
     <!--End: Creating group-->
 
     <!--Start: Showing group-->
-    <div class="padding-20 pull-left" ng-repeat="note in notes">
-        <div class="panel panel-trans width-300">
+    <div class="col-md-6 padding-none pull-left" ng-repeat="note in notes">
+        <div class="panel panel-trans">
             <div class="panel-action-container">
                 <button class="btn-trans no-border pull-right" ng-click="removeNote(note._id)">remove</button>
                 <button class="btn-trans no-border pull-right">edit</button>

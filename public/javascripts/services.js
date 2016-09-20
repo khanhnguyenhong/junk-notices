@@ -38,3 +38,14 @@ app.factory('notes', ['$http', function ($http) {
 
     return o;
 }]);
+
+app.factory('users', ['$http', function ($http) {
+    var o = {};
+
+    o.authen = function (username, password) {
+        if (username == 'bell' && password == '1123579') return true;
+        return false;
+    }
+
+    return o;
+}]);
