@@ -7,8 +7,8 @@
     </div>
 
     <!--Start: Creating group-->
-    <div class="padding-20 pull-left" ng-show="isCreating||isEditing">
-        <div class="panel panel-trans-dotted width-300" ng-init="inputNoteType='text'">
+    <div class="col-md-6 padding-none pull-left" ng-show="isCreating||isEditing">
+        <div class="panel panel-trans-dotted" ng-init="inputNoteType='text'">
             <div class="panel-body">
                 <input id="inputName" class="input-trans text-l" placeholder="name" ng-model="inputName">
                 <form class="text-left">
@@ -49,9 +49,15 @@
     <!--Start: Showing group-->
     <div class="col-md-6 padding-none pull-left" ng-repeat="note in notes">
         <div class="panel panel-trans">
-            <div class="panel-action-container">
-                <button class="btn-trans no-border pull-right" ng-click="removeNote(note._id)">remove</button>
+            <div class="panel-action-container" ng-hide="isRemoving">
+                <button class="btn-trans no-border pull-right" ng-click="isRemoving=true">remove</button>
                 <button class="btn-trans no-border pull-right">edit</button>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-action-container" ng-show="isRemoving">
+                Sure?
+                <button class="btn-trans no-border pull-right" ng-click="isRemoving=false">--Nah!</button>
+                <button class="btn-trans no-border pull-right" ng-click="removeNote(note._id)">--Yup!</button>
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body">

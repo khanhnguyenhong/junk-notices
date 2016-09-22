@@ -1,16 +1,26 @@
-<div id="left-navbar" class="col-md-4 col-sm-5 text-right">
+<div id="left-navbar" class="col-md-4 col-sm-5">
     <a class="brand" ng-click="changeState(1)" href="">Junk Notices</a>
-    <ul class="text-right">
+    <ul>
         <li ng-click="changeState(1)">
             <a ng-class="state==1?'text-bold':''" href="">
                 <b ng-show="state==1">-</b> Dashboard <b ng-show="state==1">-</b>
             </a>
         </li>
-        <li ng-click="changeState(2)"><a ng-class="state==2?'text-bold':''" href="">
-            <b ng-show="state==2">-</b> Learning Note <b ng-show="state==2">-</b></a></li>
-        <li ng-click="changeState(3)"><a ng-class="state==3?'text-bold':''" href="">
-            <b ng-show="state==3">-</b> About & Referrence <b ng-show="state==3">-</b></a></li>
-        <li><a ui-sref="login">Log out</a></li>
+        <li ng-click="changeState(2)">
+            <a ng-class="state==2?'text-bold':''" href="">
+                <b ng-show="state==2">-</b> Learning Note <b ng-show="state==2">-</b></a>
+        </li>
+        <li ng-click="changeState(3)">
+            <a ng-class="state==3?'text-bold':''" href="">
+                <b ng-show="state==3">-</b> About & Referrence <b ng-show="state==3">-</b></a>
+        </li>
+        <li ng-hide="isLoggingOut">
+            <a ng-click="isLoggingOut=true" href="">Log out</a>
+        </li>
+        <li ng-show="isLoggingOut">Sure?
+            <a ui-sref="login">--Yup!</a>
+            <a ng-click="isLoggingOut=false" href="">--Nah!</a>
+        </li>
     </ul>
     <div class="clearfix"></div>
 </div>
